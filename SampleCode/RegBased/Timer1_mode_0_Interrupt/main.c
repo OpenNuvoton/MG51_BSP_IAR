@@ -27,7 +27,7 @@ __interrupt void Timer1_ISR(void){
     TH1 = TH1_INIT;
     TL1 = TL1_INIT;    
     TF1 = 0 ;
-    P12 ^= 1;                              // GPIO toggle when interrupt}
+    P05 ^= 1;                              // GPIO toggle when interrupt}
 
     _pop_(SFRS);
 }
@@ -39,7 +39,7 @@ void main (void)
 {
     MODIFY_HIRC(HIRC_24);
     
-    P12_PUSHPULL_MODE;
+    P05_QUSAI_MODE;
   
     ENABLE_TIMER1_MODE0;                        //Timer 0 mode configuration
     TIMER1_FSYS_DIV12;

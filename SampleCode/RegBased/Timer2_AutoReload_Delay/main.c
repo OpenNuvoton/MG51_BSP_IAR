@@ -22,7 +22,7 @@ __interrupt void Timer2_ISR(void){
   
      clr_T2CON_TF2;                                //Clear Timer2 Interrupt Flag
      timer2IntFlag =1;
-     P12^=1;
+     P05^=1;
 
     _pop_(SFRS);
 }	
@@ -34,8 +34,8 @@ void main (void)
 {
     MODIFY_HIRC(HIRC_24);
     Enable_UART0_VCOM_printf_24M_115200();
-    printf_UART ("\n Test Start ... ");
-    P12_QUASI_MODE;
+    printf ("\n\r Test Start ... \n\r");
+    P05_QUASI_MODE;
 
     TIMER2_DIV_512;
     TIMER2_Auto_Reload_Delay_Mode;
@@ -55,7 +55,7 @@ void main (void)
        if (timer2IntFlag)
        {
          timer2IntFlag=0;
-         printf_UART ("\n Timer2 interrupt!");
+         printf ("\n\r Timer2 interrupt! \n\r");
        }
     }
 }

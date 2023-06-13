@@ -151,11 +151,11 @@
                 <option>
                     <name>Output variant</name>
                     <version>2</version>
-                    <state>6</state>
+                    <state>0</state>
                 </option>
                 <option>
                     <name>Output description</name>
-                    <state>No float, no field width, no precision.</state>
+                    <state>Automatic choice of formatter.</state>
                 </option>
                 <option>
                     <name>GeneralEnableMisra</name>
@@ -2231,6 +2231,9 @@
         </file>
         <file>
             <name>$PROJ_DIR$\..\..\..\..\Library\StdDriver\src\delay.c</name>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\..\..\..\Library\StdDriver\src\putchar.c</name>
         </file>
         <file>
             <name>$PROJ_DIR$\..\..\..\..\Library\StdDriver\src\sys.c</name>

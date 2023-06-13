@@ -38,7 +38,7 @@ void main (void)
 {
     MODIFY_HIRC(HIRC_24);
     
-    P12_PUSHPULL_MODE;;
+    P05_QUSAI_MODE;;
     TIMER1_MODE2_ENABLE;
     TIMER1_FSYS_DIV12;
   

@@ -22,7 +22,7 @@ void main (void)
     MODIFY_HIRC(HIRC_24);
     Enable_UART0_VCOM_printf_24M_115200();
 
-    printf_UART("\n Hello world!");
+    printf("\n\r  Hello world! \n\r");
     while(1);
 
 

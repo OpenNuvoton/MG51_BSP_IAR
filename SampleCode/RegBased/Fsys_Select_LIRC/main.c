@@ -22,15 +22,15 @@
 void main(void)
 {
 
-    P11_QUASI_MODE;
+    P05_QUASI_MODE;
     set_CKCON_CLOEN;                                  // Also can check P1.1 CLO pin for clock to find the Fsys change.
-    while (P17);
+    while (P05);
     FsysSelect(FSYS_LIRC);
     Timer0_Delay(10000,200,1000);
-    while (!P17);
+    while (!P05);
     FsysSelect(FSYS_HIRC);
     Timer0_Delay(16000000,2000,1000);
-    while (P17);
+    while (P05);
     set_PCON_PD;
     while(1);
 

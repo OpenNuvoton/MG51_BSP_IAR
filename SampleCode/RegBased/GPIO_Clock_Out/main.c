@@ -18,8 +18,8 @@ void main(void)
   /* UART0 settting for printf function */
     MODIFY_HIRC(HIRC_24);
     Enable_UART0_VCOM_printf_24M_115200();
-    printf_UART ("\n Test start ...");
-    printf_UART ("\nPlease measure P1.1 (CLKO) pin for system clock output.");
+    printf ("\n\rTest start ... n\r");
+    printf ("\n\rPlease measure P1.1 (CLKO) pin for system clock output. n\r");
     
  /* Note
        MCU power on system clock is HIRC (16.0000MHz), if need change Fsys source pleaes copy hange system closk source demo

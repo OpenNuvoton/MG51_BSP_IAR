@@ -32,11 +32,11 @@ void main (void)
 /* UART0 settting for printf function */
     MODIFY_HIRC(HIRC_24);
     Enable_UART0_VCOM_printf_24M_115200();
-    printf_UART ("\n Test start ...");
+    printf ("\n\r Test start ... \n\r");
 
   /*loop here while P46 = 1; */  
-    P12_QUASI_MODE;
-    while(P12);
+    P05_QUASI_MODE;
+    while(P05);
 
 
 /** IAP program APROM as EEPROM way
@@ -58,10 +58,10 @@ void main (void)
   
   
 /*call read byte */
-    system16highsite = (Read_APROM_BYTE((unsigned int __code *)0x38FD) <<8) ;
-    system16highsite |= (Read_APROM_BYTE((unsigned int __code *)0x38FE)&0x0F);
+    system16highsite = Read_APROM_BYTE((unsigned int __code *)0x38FD) << 8 ;
+    system16highsite |= Read_APROM_BYTE ((unsigned int __code *)0x38FE) ;
 
-    printf_UART ("\n system16highsite = 0x%X", system16highsite);
+    printf ("\n\r system16highsite = 0x%X \n\r", system16highsite);
     while(1);
 }
 

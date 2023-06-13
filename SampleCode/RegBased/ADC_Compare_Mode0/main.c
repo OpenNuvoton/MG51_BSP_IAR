@@ -1,8 +1,10 @@
 /*---------------------------------------------------------------------------------------------------------*/
 /*                                                                                                         */
-/* Copyright(c) 2019 Nuvoton Technology Corp. All rights reserved.                                         */
+/* SPDX-License-Identifier: Apache-2.0                                                                     */
+/* Copyright(c) 2023 Nuvoton Technology Corp. All rights reserved.                                         */
 /*                                                                                                         */
 /*---------------------------------------------------------------------------------------------------------*/
+
 
 
 #include "MG51_IAR.H"
@@ -14,7 +16,7 @@ void main (void)
     P06_QUASI_MODE;
     UART_Open(16600000,UART0_Timer1,115200);
     ENABLE_UART0_PRINTF;
-    printf_UART ("\n ADC compare mode for N76S003 test start... ");
+    printf ("\n\r ADC compare mode for N76S003 test start... ");
 
   
     ENABLE_ADC_AIN4;
@@ -29,11 +31,11 @@ void main (void)
          while (!ADCF);
          if (ADCCON2&SET_BIT4)
          {
-            printf_UART ("\n ADC value greater than comapre setting"); 
+            printf ("\n\r ADC value greater than comapre setting"); 
          }
          else if (!(ADCCON2&SET_BIT4))
          {
-            printf_UART ("\n ADC value less than comapre setting"); 
+            printf ("\n\r ADC value less than comapre setting"); 
          }
          Timer0_Delay(24000000,500,1000);
          clr_ADCCON0_ADCF;

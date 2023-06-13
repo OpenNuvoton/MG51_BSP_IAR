@@ -36,7 +36,7 @@ void main (void)
    /* UART0 settting for printf function */
     MODIFY_HIRC(HIRC_24);
     Enable_UART0_VCOM_printf_24M_115200();
-    printf_UART ("\n Test start ...");
+    printf ("\n\r Test start ... \n\r");
 
 /*-------------------------------------------------
   ADC trig initial setting
@@ -90,7 +90,7 @@ void main (void)
       {
         ADCResult12bit = ADCRH<<4;
         ADCResult12bit|= ADCRL&0x0F;
-        printf_UART( "\n ADCRH = 0x%x", ADCResult12bit);
+        printf( "\n ADCRH = 0x%X", ADCResult12bit);
         adcintflag = 0;
       }
     }

@@ -2230,6 +2230,9 @@
             <name>$PROJ_DIR$\..\..\..\..\Library\StdDriver\src\common.c</name>
         </file>
         <file>
+            <name>$PROJ_DIR$\..\..\..\..\Library\StdDriver\src\putchar.c</name>
+        </file>
+        <file>
             <name>$PROJ_DIR$\..\..\..\..\Library\StdDriver\src\spi.c</name>
         </file>
         <file>

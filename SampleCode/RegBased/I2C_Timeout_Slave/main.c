@@ -139,7 +139,7 @@ void Init_I2C_SLAVE(void)
 //========================================================================================================
 void main(void)
 {
-
+     MODIFY_HIRC(HIRC_24);
     /* Initial I2C function */
     Init_I2C_SLAVE();                                 //initial I2C circuit
 

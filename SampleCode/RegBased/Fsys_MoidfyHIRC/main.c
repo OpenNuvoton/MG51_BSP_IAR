@@ -14,7 +14,7 @@
 void main(void)
 {
   P11_PUSHPULL_MODE;
-  P12_PUSHPULL_MODE;
+  P05_QUSAI_MODE;
   set_CKCON_CLOEN;
 /* clock out div 100 */
   CKDIV = 50;

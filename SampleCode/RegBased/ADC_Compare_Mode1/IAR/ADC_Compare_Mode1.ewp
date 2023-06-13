@@ -2236,6 +2236,9 @@
             <name>$PROJ_DIR$\..\..\..\..\Library\StdDriver\src\delay.c</name>
         </file>
         <file>
+            <name>$PROJ_DIR$\..\..\..\..\Library\StdDriver\src\putchar.c</name>
+        </file>
+        <file>
             <name>$PROJ_DIR$\..\..\..\..\Library\StdDriver\src\sys.c</name>
         </file>
         <file>

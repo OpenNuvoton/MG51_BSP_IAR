@@ -15,7 +15,7 @@
 //-----------------------------------------------------------------------------------------------------------
 void SPI_Error(void)
 {
-    printf_UART ("\n SPI error!");
+    printf ("\n\r SPI error!");
     while(1);                                       // SPI error 
 }
 
@@ -99,7 +99,7 @@ void main(void)
   /* UART0 settting for printf function */
     MODIFY_HIRC(HIRC_24);
     Enable_UART0_VCOM_printf_24M_115200();
-    printf_UART ("\n Test start ...");
+    printf ("\n\r Test start ... \n\r");
     
     
     SPI_Initial();
@@ -108,7 +108,7 @@ void main(void)
     if((u8MID != 0x4F)&&(u8DID != 0x4E))
         SPI_Error();
     
-    printf ("\n SPI trans finish.");
+    printf ("\n\r SPI trans finish.");
     while(1);                                    // SPI transmission finish and P0.6 flash
 }
 //-----------------------------------------------------------------------------------------------------------

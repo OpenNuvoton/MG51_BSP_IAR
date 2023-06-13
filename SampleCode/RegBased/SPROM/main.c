@@ -26,14 +26,14 @@ void main (void)
 /* UART0 settting for printf function */
     MODIFY_HIRC(HIRC_24);
     Enable_UART0_VCOM_printf_24M_115200();
-    printf ("\n Test start ...");
+    printf ("\n\r Test start ...\n\r");
  
-    printf_UART("\n SPROM lock byte = 0x%x ", lockdata);
+    printf("\n\r  SPROM lock byte = 0x%X ", lockdata);
     while(1)
     {
       temp = SPROM_FUNC(SPTEMP);
       ENABLE_UART0_PRINTF;
-      printf_UART("\n SPTEMP= 0x%x", temp);
+      printf("\n\r  SPTEMP= 0x%X \n\r", temp);
       DISABLE_UART0_PRINTF;
       Timer0_Delay(24000000,300,1000);
     }

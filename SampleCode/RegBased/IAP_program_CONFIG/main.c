@@ -21,9 +21,9 @@ void main (void)
 {
     MODIFY_HIRC(HIRC_24);
 
-    P12_QUASI_MODE;
-    P12 = 1;
-    while(P12);
+    P05_QUASI_MODE;
+    P05 = 1;
+    while(P05);
 
     SFRS=0;
     Modify_CONFIG(0xEF,0xFF,0x6B,0xFF,0xFF);

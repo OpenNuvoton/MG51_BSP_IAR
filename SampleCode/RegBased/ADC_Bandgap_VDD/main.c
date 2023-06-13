@@ -26,7 +26,7 @@ void main (void)
 
     MODIFY_HIRC(HIRC_24);
     Enable_UART0_VCOM_printf_24M_115200();
-    printf_UART ("\n Test start ...");
+    printf ("\n\r Test start ... \n\r");
 
 /* ADC sampling timing setting for Bandgap*/  
     ENABLE_ADC_BANDGAP;
@@ -40,16 +40,19 @@ void main (void)
     ADC_BG_Result = ADCRH<<4 ;
     ADC_BG_Result = ADC_BG_Result|(ADCRL&0x0F);
     DISABLE_ADC;              /*Disable ADCEN each time after ADC trig */
+    
  /*                  VDD  Now                         READ_BANDGAP() VALUE              */
  /*    ------------------------------------- = ----------------------------------       */
  /*    3072mV(Storage value test condition)      NOW ADC Bandgap convert reuslt         */
       VDD_Voltage = ((float)READ_BANDGAP()/(float)ADC_BG_Result)*3.072;
-
+      printf ("\n\r VDD_Voltage =  %f ", VDD_Voltage);
+      
  /*            Bandgap real voltage                    READ_BANDGAP() VALUE             */
  /*    ------------------------------------- = ----------------------------------       */
  /*    3072mV(Storage value test condition)              4096(12bit ADC)                */
-      Bandgap_Voltage = ((float)READ_BANDGAP()*3/4/1000);
-
+     Bandgap_Voltage = ((float)READ_BANDGAP()*3/4/1000);
+     printf ("\n\r Bandgap_Voltage = %f ", Bandgap_Voltage);
+     
     while(1);
 }
 

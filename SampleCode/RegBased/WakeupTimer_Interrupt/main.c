@@ -19,7 +19,7 @@ __interrupt void WKT_ISR(void){
   
     clr_WKCON_WKTF;
     wktflag = 1;
-    P12 ^= 1;
+    P05 ^= 1;
     _pop_(SFRS);
 }
 
@@ -33,8 +33,8 @@ void main (void)
   /* UART0 settting for printf function */
     MODIFY_HIRC(HIRC_24);
     Enable_UART0_VCOM_printf_24M_115200();
-    printf_UART ("\n Test start ...");
-    P12_QUASI_MODE;
+    printf ("\n\r Test start ... \n\r");
+    P05_QUASI_MODE;
     
     WKT_AutoReload_Interrupt_Initial_S(1);
     WKT_Interrupt(Enable);
@@ -45,7 +45,7 @@ void main (void)
        if(wktflag)
       {
         SFRS=0;
-        printf_UART ("\n WKT interrupt!");
+        printf ("\n\r WKT interrupt!");
         wktflag = 0;
       }
     }

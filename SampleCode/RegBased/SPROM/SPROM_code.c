@@ -15,8 +15,8 @@
 /* SPROM area address define in .xcl file */
 unsigned char SPROM_FUNC(unsigned char unused)  @ "SPROM_C"
 {
-  P12_PUSHPULL_MODE;
-  P12 ^= 1;
+  P05_QUASI_MODE;
+  P05 ^= 1;
   SPTEMP++;
   return SPTEMP;
 }

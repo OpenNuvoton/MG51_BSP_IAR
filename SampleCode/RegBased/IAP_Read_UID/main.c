@@ -20,10 +20,10 @@ void main(void)
     Enable_UART0_VCOM_printf_24M_115200();
 
     Read_UID();
-    printf ("\n UID = ");
+    printf ("\n\r UID = ");
     for(ct=0;ct<12;ct++)
     {
-      printf_UART (" 0x%x",UIDBuffer[ct]);
+      printf (" 0x%X \r",UIDBuffer[ct]);
     }
   
     while(1);

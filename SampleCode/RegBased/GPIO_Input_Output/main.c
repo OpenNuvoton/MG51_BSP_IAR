@@ -21,14 +21,15 @@ void main (void)
     /* UART0 settting for printf function */
     MODIFY_HIRC(HIRC_24);
     Enable_UART0_VCOM_printf_24M_115200();
-    printf_UART ("\n Test start ...");
+    printf ("\n\r Test start ... \n\r");
     
     ALL_GPIO_QUASI_MODE;
-    P12_PUSHPULL_MODE;
+    P05_QUSAI_MODE;
     P13_INPUT_MODE;
   
     while(1)
     {
+      P0 = ~P0;
       P1 = ~P1;
       P30 ^= 1;
       P1 |= SET_BIT2;    

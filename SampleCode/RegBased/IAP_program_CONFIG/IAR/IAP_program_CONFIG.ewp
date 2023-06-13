@@ -2233,6 +2233,9 @@
             <name>$PROJ_DIR$\..\..\..\..\Library\StdDriver\src\IAP.c</name>
         </file>
         <file>
+            <name>$PROJ_DIR$\..\..\..\..\Library\StdDriver\src\putchar.c</name>
+        </file>
+        <file>
             <name>$PROJ_DIR$\..\..\..\..\Library\StdDriver\src\sys.c</name>
         </file>
     </group>

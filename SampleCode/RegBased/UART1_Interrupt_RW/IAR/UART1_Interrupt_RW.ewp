@@ -137,7 +137,7 @@
                 </option>
                 <option>
                     <name>RTLibraryPath</name>
-                    <state>$TOOLKIT_DIR$\LIB\CLIB\cl-pli-nsid-2h16inc.r51</state>
+                    <state>$TOOLKIT_DIR$\LIB\CLIB\cl-pli-nlxd-1e16x01.r51</state>
                 </option>
                 <option>
                     <name>Input variant</name>
@@ -2231,6 +2231,9 @@
         </file>
         <file>
             <name>$PROJ_DIR$\..\..\..\..\Library\StdDriver\src\delay.c</name>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\..\..\..\Library\StdDriver\src\putchar.c</name>
         </file>
         <file>
             <name>$PROJ_DIR$\..\..\..\..\Library\StdDriver\src\sys.c</name>

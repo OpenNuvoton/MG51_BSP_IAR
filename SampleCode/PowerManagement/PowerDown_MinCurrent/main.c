@@ -17,7 +17,7 @@ void main (void)
 /* UART0 settting for printf function */
     MODIFY_HIRC(HIRC_24);
     Enable_UART0_VCOM_printf_24M_115200();
-    printf ("\n Test start ...");
+    printf ("\n\r Test start ...\n\r");
 
 /* Quasi mode better for power down power comsuption (necessary) */
     ALL_GPIO_QUASI_MODE;

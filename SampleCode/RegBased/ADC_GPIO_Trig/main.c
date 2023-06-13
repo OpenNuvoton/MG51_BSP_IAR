@@ -36,9 +36,9 @@ void main (void)
 /* UART0 settting for printf function */
     MODIFY_HIRC(HIRC_24);
     Enable_UART0_VCOM_printf_24M_115200();
-    printf_UART ("\n Test start ...");
-    printf_UART ("\n Toggle P04 to low to start ADC ...");
-    printf_UART ("\n Disable ADC after each trig is better ...");
+    printf ("\n\r Test start ... \n\r");
+    printf ("\n\r Toggle P04 to low to start ADC ...");
+    printf ("\n\r Disable ADC after each trig is better ...");
 
 /*---------------------------------------------------------------
   ADC port trig initial setting toggle P0.4 to start ADC 
@@ -56,7 +56,7 @@ void main (void)
       {
             ADCResult12bit = ADCRH<<4;
             ADCResult12bit|= ADCRL&0x0F;
-            printf_UART ("\n Value = 0x%x",ADCResult12bit);
+            printf ("\n\r Value = 0x%X",ADCResult12bit);
             adcintflag =0;
       }
       Timer0_Delay(24000000,500,1000);

@@ -37,7 +37,7 @@ __interrupt void SerialPort1_ISR(void){
 /****************************************************************************************************************
  * FUNCTION_PURPOSE: Main function 
   
- !!! MG51FB9AE / MG51XB9AE /MG51XB9BE UART1 pin also occupied by debug pin, 
+ !!! UART1 pin also occupied by debug pin, 
  please remove Nu-link or not in debug mode to test UART1 function.
 
  External UART1 connect also disturb debug download
@@ -45,9 +45,12 @@ __interrupt void SerialPort1_ISR(void){
  ***************************************************************************************************************/
 void main (void)
 {
-    P12_PUSHPULL_MODE;    // For I/O toggle display
+    P05_QUSAI_MODE;    // For I/O toggle display
 /* Modify HIRC to 24MHz for UART baud rate deviation not over 1%*/
     MODIFY_HIRC(HIRC_24);
+    Enable_UART0_VCOM_printf_24M_115200();
+    printf(" \n\r Please remove Nu-link or not in debug mode to test UART1 function.  \n\r");
+    
     P16_QUASI_MODE;
     P02_INPUT_MODE;
     UART_Open(24000000,UART1_Timer3,115200);
@@ -58,7 +61,7 @@ void main (void)
     {
       if (uart1_receive_flag)
       {
-          P12 ^= 1;      //Receive each byte P12 toggle, never work under debug mode
+          P05 ^= 1;      //Receive each byte P12 toggle, never work under debug mode
           UART_Send_Data(UART1,uart1_receive_data);
           uart1_receive_flag = 0;
       }

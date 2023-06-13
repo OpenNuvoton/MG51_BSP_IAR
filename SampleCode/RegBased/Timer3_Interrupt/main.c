@@ -22,7 +22,7 @@ __interrupt void Timer3_ISR(void){
 
     clr_T3CON_TF3;
     timer3IntFlag=1;
-    P12 ^= 1;
+    P05 ^= 1;
 
     _pop_(SFRS);
 }	
@@ -36,8 +36,8 @@ void main (void)
 /* UART0 settting for printf function */
     MODIFY_HIRC(HIRC_24);
     Enable_UART0_VCOM_printf_24M_115200();
-    printf_UART ("\n Test start ...");
-    P12_QUASI_MODE;
+    printf ("\n\r Test start ... \n\r");
+    P05_QUASI_MODE;
 
 
     Timer3_AutoReload_Interrupt_Initial(24,300000);     // FSYS 24M,  Timer divder 128, delay 300ms)
@@ -46,7 +46,7 @@ void main (void)
     {
       if (timer3IntFlag)
       { 
-          printf_UART ("\n Timer3 Interrupt !");
+          printf ("\n\r Timer3 Interrupt ! \n ");
           timer3IntFlag=0;
       }
     }

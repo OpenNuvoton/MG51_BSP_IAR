@@ -24,7 +24,7 @@
 __interrupt void Timer0_ISR(void){
     _push_(SFRS);
   
-    P12 ^= 1;                                 // GPIO1 toggle when interrup
+    P05 ^= 1;                                 // GPIO1 toggle when interrup
 
     _pop_(SFRS);
 }	
@@ -35,7 +35,7 @@ __interrupt void Timer0_ISR(void){
 void main (void)
 {
     MODIFY_HIRC(HIRC_24);
-    P12_PUSHPULL_MODE;
+    P05_QUSAI_MODE;
     ENABLE_TIMER0_MODE2;
     TIMER0_FSYS;
   

@@ -183,7 +183,7 @@ Read_Error_Stop:
     if (I2C_Reset_Flag)
     {
         I2C_SI_Check();
-        printf_UART("\nI2C Read error, test stop");
+        printf("\n\r I2C Read error, test stop");
         I2C_Reset_Flag = 0;
     }
 }
@@ -295,7 +295,7 @@ Write_Error_Stop:
     {
         I2C_SI_Check();
         I2C_Reset_Flag  = 0;
-        printf_UART("\nI2C Write error, test stop");
+        printf("\n\r I2C Write error, test stop");
      }
 
 }
@@ -305,39 +305,39 @@ void main(void)
     /* UART0 settting for printf function */
     MODIFY_HIRC(HIRC_24);
     Enable_UART0_VCOM_printf_24M_115200();
-    printf_UART ("\n Test start ...");
+    printf ("\n\r Test start ... \n\r");
 	
     /* Initial I2C function */
     Init_I2C();                                 //initial I2C circuit
     
     /* page0 R/W */
-    printf_UART ("\n\n24LC64 Page0 Write (0x55,0xAA...)...");
+    printf ("\n\r\n24LC64 Page0 Write (0x55,0xAA...)...\n\r");
     One_Page_Write(0,0x55);                     //page0, write 0x55,0xAA,........
     One_Page_Read (0,0x55);                     //page0, read  0x55,0xAA,........
 
     /* page1 R/W */
-    printf_UART ("\n\n24LC64 Page1 Write (0x00,0xFF...)...");
+    printf ("\n\r\n24LC64 Page1 Write (0x00,0xFF...)...\n\r");
     One_Page_Write(1,0x00);                     //page1, write 0x00,0xFF,........
     One_Page_Read (1,0x00);                     //page1, read  0x00,0xFF,........
 
     /* page2 R/W */
-    printf_UART ("\n\n24LC64 Page2 Write (0xAA,0x55...)...");
+    printf ("\n\r\n24LC64 Page2 Write (0xAA,0x55...)...\n\r");
     One_Page_Write(2,0xAA);                     //page2, write 0xAA,0x55,........
     One_Page_Read (2,0xAA);                     //page2, read  0xAA,0x55,........
 
     /* page3 R/W */
-    printf_UART ("\n\n24LC64 Page3 Write (0xFF,0x00...)...");
+    printf ("\n\r\n24LC64 Page3 Write (0xFF,0x00...)...\n\r");
     One_Page_Write(3,0xFF);                     //page3, write 0xFF,0x00,........
     One_Page_Read (3,0xFF);                     //page3, read  0xFF,0x00,........
 
     /* page255 R/W */
-    printf_UART ("\n\n24LC64 Page255 Write (0x0F,0xF0...)...");
+    printf ("\n\r\n24LC64 Page255 Write (0x0F,0xF0...)...\n\r");
     One_Page_Write(255,0x0F);                   //page255, write 0x0F,0xF0,........
     One_Page_Read (255,0x0F);                   //page255, read  0x0F,0xF0,........
 
     /* ==== Test Pass ==== */      
 
-    printf_UART("\n MG51 <--> 24LC64, I2C Demo Code test pass...");
+    printf("\n\r  MG51 <--> 24LC64, I2C Demo Code test pass...\n\r");
 
 
     while (1);

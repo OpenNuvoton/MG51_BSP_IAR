@@ -137,7 +137,7 @@
                 </option>
                 <option>
                     <name>RTLibraryPath</name>
-                    <state>$TOOLKIT_DIR$\LIB\CLIB\cl-pli-nsid-2h16inc.r51</state>
+                    <state>$TOOLKIT_DIR$\LIB\CLIB\cl-pli-nlxd-2h16inc.r51</state>
                 </option>
                 <option>
                     <name>Input variant</name>
@@ -151,11 +151,11 @@
                 <option>
                     <name>Output variant</name>
                     <version>2</version>
-                    <state>6</state>
+                    <state>0</state>
                 </option>
                 <option>
                     <name>Output description</name>
-                    <state>No float, no field width, no precision.</state>
+                    <state>Automatic choice of formatter.</state>
                 </option>
                 <option>
                     <name>GeneralEnableMisra</name>
@@ -2231,6 +2231,9 @@
         </file>
         <file>
             <name>$PROJ_DIR$\..\..\..\..\Library\StdDriver\src\isr.c</name>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\..\..\..\Library\StdDriver\src\putchar.c</name>
         </file>
         <file>
             <name>$PROJ_DIR$\..\..\..\..\Library\StdDriver\src\sys.c</name>

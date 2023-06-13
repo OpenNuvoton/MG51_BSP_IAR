@@ -30,7 +30,7 @@ void main (void)
     /* UART0 settting for printf function */
     MODIFY_HIRC(HIRC_24);
     Enable_UART0_VCOM_printf_24M_115200();
-    printf_UART ("\n Test start ...");
+    printf ("\n\r Test start ... \n\r");
   
     P30_QUASI_MODE;                      //setting INT0 pin P3.0 as Quasi mode with internal pull high  
     P30 = 1;
@@ -42,7 +42,7 @@ void main (void)
     {
       if (int0flag)
       {
-         printf_UART ("\n INT0 interrupt !");
+         printf ("\n\r INT0 interrupt ! \n\r");
          int0flag = 0;
       }
     }

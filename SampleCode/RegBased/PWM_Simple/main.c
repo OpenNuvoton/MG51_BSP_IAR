@@ -20,7 +20,7 @@ void main(void)
   /* UART0 settting for printf function */
     MODIFY_HIRC(HIRC_24);
     Enable_UART0_VCOM_printf_24M_115200();
-    printf_UART ("\n Test start ...");
+    printf ("\n\r Test start ... \n\r");
     
     P12_QUASI_MODE;
     P10_QUASI_MODE;

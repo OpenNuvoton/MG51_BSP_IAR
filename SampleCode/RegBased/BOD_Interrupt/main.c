@@ -30,7 +30,7 @@ void main (void)
   /* UART0 settting for printf function */
     MODIFY_HIRC(HIRC_24);
     Enable_UART0_VCOM_printf_24M_115200();
-    printf_UART ("\n Test start ...");
+    printf ("\n\r Test start ... \n\r");
 
     BOD_Open(Enable, VBOD_2_4, BOD_Reset_Enable);
     BOD_LowPower(LPBOD_Mode_3);
@@ -41,7 +41,7 @@ void main (void)
 
        if (bodflag)
        {
-         printf_UART ("\n BOD interrupt! ..."); 
+         printf ("\n\r BOD interrupt! ..."); 
          bodflag = 0;
        }
   }

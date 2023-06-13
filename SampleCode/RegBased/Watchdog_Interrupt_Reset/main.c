@@ -25,7 +25,7 @@ _push_(SFRS);
       while(WDCON&=SET_BIT6);             /* Check for the WDT counter cleared */
   
   #endif
-    P12 ^= 1;
+    P05 ^= 1;
     Timer0_Delay(24000000,500,1000);
 _pop_(SFRS);
 }
@@ -39,9 +39,10 @@ void main (void)
 /* UART0 settting for printf function */
     MODIFY_HIRC(HIRC_24);
     Enable_UART0_VCOM_printf_24M_115200();
-    printf ("\n Test start ...");
-
-    P12_QUASI_MODE;
+    printf ("\n\r Test start ...\n\r");
+    printf ("\n\r WDT RESET must enable by CONFIG ...\n\r");
+    
+    P05_QUASI_MODE;
 /*--------------------------------------------------------
 *Warning:
 *Pleaes always check CONFIG WDT disable first 
@@ -58,7 +59,7 @@ void main (void)
       Timer0_Delay(24000000,50,1000);
       WDT_COUNTER_CLEAR;                  /* Clear WDT counter */
       while(WDCON&=SET_BIT6);             /* Check for the WDT counter cleared */
-      P12 ^= 1;
+      P05 ^= 1;
     }
       set_PCON_PD;
 }

@@ -22,7 +22,7 @@ void main (void)
   /* UART0 settting for printf function */
     MODIFY_HIRC(HIRC_24);
     Enable_UART0_VCOM_printf_24M_115200();
-    printf_UART ("\n Test start ...");
+    printf ("\n\r Test start ... \n\r");
     while(1)
     {
 /*Enable channel 5 */ 
@@ -36,7 +36,7 @@ void main (void)
       ADCdataAIN5|= ADCRL&0x0F;
       DISABLE_ADC;
       
-      printf_UART("\n ADC channel 5 =0x%x", ADCdataAIN5);
+      printf("\n\r  ADC channel 5 =0x%X", ADCdataAIN5);
       Timer0_Delay(24000000,500,1000);
 /*Enable Bandgap */     
       ENABLE_ADC_BANDGAP;
@@ -49,7 +49,7 @@ void main (void)
       ADCdataVBG|= ADCRL&0x0F;
       DISABLE_ADC;
 
-      printf_UART("\n ADC channel bandgap =0x%x", ADCdataVBG);
+      printf("\n\r  ADC channel bandgap =0x%X", ADCdataVBG);
       Timer0_Delay(16000000,500,1000);
     }  
 }

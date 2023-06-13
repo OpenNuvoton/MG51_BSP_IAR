@@ -1,6 +1,7 @@
 /*---------------------------------------------------------------------------------------------------------*/
 /*                                                                                                         */
-/* Copyright(c) 2019 Nuvoton Technology Corp. All rights reserved.                                         */
+/* SPDX-License-Identifier: Apache-2.0                                                                     */
+/* Copyright(c) 2023 Nuvoton Technology Corp. All rights reserved.                                         */
 /*                                                                                                         */
 /*---------------------------------------------------------------------------------------------------------*/
 
@@ -12,7 +13,7 @@ void main (void)
     /* Initial UART0 for pVrintf */
     MODIFY_HIRC(HIRC_24);
     Enable_UART0_VCOM_printf_24M_115200();
-    printf_UART ("\n ADC compare mode for MG51 test start... ");
+    printf ("\n\r ADC compare mode for MG51 test start... ");
 
     ENABLE_ADC_AIN4;
     clr_ADCCON0_ADCF;
@@ -28,7 +29,7 @@ void main (void)
     {
         if (ADCF)
         {
-          printf_UART ("\n MG51 ADC compare value same as setting");
+          printf ("\n\r MG51 ADC compare value same as setting");
           clr_ADCCON0_ADCF;
           set_ADCCON0_ADCS;
         }
@@ -36,11 +37,11 @@ void main (void)
         {
            if (ADCCON2&SET_BIT4)
            {
-              printf_UART ("\n ADC value greater than comapre setting"); 
+              printf ("\n\r ADC value greater than comapre setting"); 
            }
            else if (!(ADCCON2&SET_BIT4))
            {
-              printf_UART ("\n ADC value less than comapre setting"); 
+              printf ("\n\r ADC value less than comapre setting"); 
            }
         }
 	Timer0_Delay(24000000,500,1000);

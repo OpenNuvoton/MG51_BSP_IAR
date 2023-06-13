@@ -2,7 +2,7 @@
 
 <workspace>
   <project>
-    <path>$WS_DIR$\GPIO_PowerDown_BODdisable.ewp</path>
+    <path>$WS_DIR$\IAP_Dataflash_EEPROM_SPROM.ewp</path>
   </project>
   <batchBuild/>
 </workspace>

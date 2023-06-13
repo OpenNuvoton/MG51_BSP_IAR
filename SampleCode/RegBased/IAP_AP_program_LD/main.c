@@ -18,12 +18,12 @@ void main (void)
     unsigned char i;
 
     MODIFY_HIRC(HIRC_24);
-    P12_QUASI_MODE;
+    P05_QUASI_MODE;
     
     for (i=0;i<128;i++)
         IAPDataBuf[i]=i;
 
-    while(P12);
+    while(P05);
 
     Erase_LDROM(DATA_START_ADDR,128);
     Erase_Verify_LDROM(DATA_START_ADDR,128);

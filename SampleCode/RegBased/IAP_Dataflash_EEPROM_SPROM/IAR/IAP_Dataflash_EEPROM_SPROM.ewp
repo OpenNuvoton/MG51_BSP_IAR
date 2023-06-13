@@ -752,7 +752,7 @@
                 </option>
                 <option>
                     <name>OutputFile</name>
-                    <state>GPIO_PowerDown_BODdisable.d51</state>
+                    <state>IAP_Dataflash_EEPROM_SPROM_Array.d51</state>
                 </option>
                 <option>
                     <name>OutputFormat</name>
@@ -946,7 +946,7 @@
                 </option>
                 <option>
                     <name>ExtraOutputFile</name>
-                    <state>GPIO_PowerDown_BODdisable.hex</state>
+                    <state>IAP_Dataflash_EEPROM_SPROM_Array.hex</state>
                 </option>
                 <option>
                     <name>ExtraOutputFormat</name>
@@ -2230,7 +2230,10 @@
             <name>$PROJ_DIR$\..\..\..\..\Library\StdDriver\src\common.c</name>
         </file>
         <file>
-            <name>$PROJ_DIR$\..\..\..\..\Library\StdDriver\src\delay.c</name>
+            <name>$PROJ_DIR$\..\..\..\..\Library\StdDriver\src\eeprom_sprom.c</name>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\..\..\..\Library\StdDriver\src\putchar.c</name>
         </file>
         <file>
             <name>$PROJ_DIR$\..\..\..\..\Library\StdDriver\src\sys.c</name>
@@ -2241,6 +2244,9 @@
     </group>
     <group>
         <name>Startup</name>
+        <file>
+            <name>$PROJ_DIR$\..\..\..\..\Library\Startup\IAR\cstartup.s51</name>
+        </file>
     </group>
     <file>
         <name>$PROJ_DIR$\..\main.c</name>

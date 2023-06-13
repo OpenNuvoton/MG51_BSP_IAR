@@ -54,7 +54,7 @@
                 </option>
                 <option>
                     <name>Start of extended stack</name>
-                    <state>0x002000</state>
+                    <state></state>
                 </option>
                 <option>
                     <name>Calling convention</name>
@@ -151,11 +151,11 @@
                 <option>
                     <name>Output variant</name>
                     <version>2</version>
-                    <state>6</state>
+                    <state>0</state>
                 </option>
                 <option>
                     <name>Output description</name>
-                    <state>No float, no field width, no precision.</state>
+                    <state>Automatic choice of formatter.</state>
                 </option>
                 <option>
                     <name>GeneralEnableMisra</name>
@@ -305,7 +305,7 @@
                 </option>
                 <option>
                     <name>CCDefines</name>
-                    <state></state>
+                    <state>FOSC_160000=1</state>
                 </option>
                 <option>
                     <name>CCPreprocFile</name>
@@ -491,7 +491,7 @@
                 </option>
                 <option>
                     <name>CCOptLevel</name>
-                    <state>1</state>
+                    <state>0</state>
                 </option>
                 <option>
                     <name>CCOptStrategy</name>
@@ -500,7 +500,7 @@
                 </option>
                 <option>
                     <name>CCOptLevelSlave</name>
-                    <state>1</state>
+                    <state>0</state>
                 </option>
                 <option>
                     <name>CompilerMisraRules04</name>
@@ -513,7 +513,7 @@
                 </option>
                 <option>
                     <name>IccCDialect</name>
-                    <state>1</state>
+                    <state>0</state>
                 </option>
                 <option>
                     <name>IccAllowVLA</name>
@@ -661,7 +661,7 @@
                 </option>
                 <option>
                     <name>ADefines</name>
-                    <state></state>
+                    <state>FOSC_160000</state>
                 </option>
                 <option>
                     <name>AWarnEnable</name>
@@ -752,7 +752,7 @@
                 </option>
                 <option>
                     <name>OutputFile</name>
-                    <state>Watchdog_Interrupt.d51</state>
+                    <state>IAP_Dataflash_EEPROM_ARRAY.d51</state>
                 </option>
                 <option>
                     <name>OutputFormat</name>
@@ -786,7 +786,7 @@
                 </option>
                 <option>
                     <name>XList</name>
-                    <state>1</state>
+                    <state>0</state>
                 </option>
                 <option>
                     <name>SegmentMap</name>
@@ -946,7 +946,7 @@
                 </option>
                 <option>
                     <name>ExtraOutputFile</name>
-                    <state>Watchdog_Interrupt.hex</state>
+                    <state>IAP_Dataflash_EEPROM_ARRAY.hex</state>
                 </option>
                 <option>
                     <name>ExtraOutputFormat</name>
@@ -2230,7 +2230,13 @@
             <name>$PROJ_DIR$\..\..\..\..\Library\StdDriver\src\common.c</name>
         </file>
         <file>
-            <name>$PROJ_DIR$\..\..\..\..\Library\StdDriver\src\delay.c</name>
+            <name>$PROJ_DIR$\..\..\..\..\Library\StdDriver\src\eeprom.c</name>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\..\..\..\Library\StdDriver\src\IAP.c</name>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\..\..\..\Library\StdDriver\src\putchar.c</name>
         </file>
         <file>
             <name>$PROJ_DIR$\..\..\..\..\Library\StdDriver\src\sys.c</name>

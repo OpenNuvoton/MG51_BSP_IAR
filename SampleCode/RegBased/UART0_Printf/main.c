@@ -20,7 +20,7 @@ void main (void)
   
     while(1)
     {
-      printf_UART("\n Hello world!");
-      Timer0_Delay(24000000,300,1000);
+      printf("\n\r  Hello world! \r\n");
+      Timer0_Delay(24000000,800,1000);
     }
 }

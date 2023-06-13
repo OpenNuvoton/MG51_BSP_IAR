@@ -19,7 +19,7 @@ void main (void)
   /* UART0 settting for printf function */
     MODIFY_HIRC(HIRC_24);
     Enable_UART0_VCOM_printf_24M_115200();
-    printf_UART ("\n Test start ...");
+    printf ("\n\r Test start ... \n\r");
     
 /* PWM0 initial setting  
    * include pwm.c in Library for PWM mode setting
@@ -28,7 +28,7 @@ void main (void)
     PWM0_ClockSource(PWM_FSYS,128);                                    // define PWM0 clock source and divider.
   
     ENABLE_PWM0_CH0_P12_OUTPUT;
-    P12_PUSHPULL_MODE;
+    P05_QUSAI_MODE;
     PWM0_ConfigOutputChannel(0,Independent,EdgeAligned,0x6FF,10);    // setting PWM channel 0 as 10% duty high of 0x6FF PWM period = 0x00B3
 
     ENABLE_PWM0_CH2_P10_OUTPUT;
@@ -52,11 +52,11 @@ void main (void)
     while(1)
     {
       Timer2_Delay(24000000,128,3000,1000);
-      printf_UART ("\n PWM duty changed ...");
+      printf ("\n\r PWM duty changed ...\r");
       PWM0_ConfigOutputChannel(2,Independent,EdgeAligned,0x6FF,90);
       PWM0_Reload();
       Timer2_Delay(24000000,128,3000,1000);
-      printf_UART ("\n PWM duty changed ! ");
+      printf ("\n\r PWM duty changed ! \r ");
       PWM0_ConfigOutputChannel(2,Independent,EdgeAligned,0x6FF,10);
       PWM0_Reload();
     } 

@@ -24,11 +24,11 @@ void main (void)
   
     MODIFY_HIRC(HIRC_24);
   
-    P12_QUASI_MODE;
+    P05_QUASI_MODE;
     for(i=0;i<128;i++)
       IAPDataBuf[i]=i;
 
-    while (P12);
+    while (P05);
     Erase_APROM(0x80,128);
     Erase_Verify_APROM(0x80,128);
     Program_APROM(0x80,128);

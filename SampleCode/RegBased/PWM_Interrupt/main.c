@@ -35,7 +35,7 @@ void main(void)
   /* UART0 settting for printf function */
     MODIFY_HIRC(HIRC_24);
     Enable_UART0_VCOM_printf_24M_115200();
-    printf_UART ("\n Test start ...");
+    printf ("\n\r Test start ... \n\r");
 /**********************************************************************
   PWM frequency = Fpwm/((PWMPH,PWMPL) + 1) <Fpwm = Fsys/PWM_CLOCK_DIV> 
                 = (24MHz/8)/(0x3FF + 1)
@@ -60,7 +60,7 @@ void main(void)
     {
       if (pwm0flag)
       {
-        printf_UART ("\n PWM interrupt!");
+        printf ("\n\r PWM interrupt! \r");
         pwm0flag = 0;
       }
     }

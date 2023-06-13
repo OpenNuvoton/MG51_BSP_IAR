@@ -41,7 +41,7 @@ __interrupt void SerialPort0_ISR(void){
 /************************************************************************************************************/
  void main(void)
 {
-    P12_PUSHPULL_MODE;
+    P05_QUASI_MODE;
 /* Modify HIRC to 24MHz for UART printf function only */
     MODIFY_HIRC(HIRC_24);
     P06_QUASI_MODE;
@@ -55,7 +55,7 @@ __interrupt void SerialPort0_ISR(void){
   {
     if (uart0_receive_flag)
     {
-      P12 ^= 1;
+      P05 ^= 1;
       DISABLE_UART0_INTERRUPT;
       UART_Send_Data(UART0,uart0_receive_data);
       uart0_receive_flag = 0;

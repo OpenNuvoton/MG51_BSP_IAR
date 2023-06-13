@@ -22,7 +22,7 @@
 /****************************************************************/
 void SPI_Error(void)
 {
-    printf_UART ("\n SPI R/W error !");
+    printf ("\n\r SPI R/W error !");
     while(1);
 }
 /****************************************************************/
@@ -184,7 +184,7 @@ void main(void)
   /* UART0 settting for printf function */
     MODIFY_HIRC(HIRC_24);
     Enable_UART0_VCOM_printf_24M_115200();
-    printf_UART ("\n Test start ...");
+    printf ("\n\r Test start ... \n\r");
 
     SPI_Initial();
 
@@ -200,6 +200,7 @@ void main(void)
 /* The procedure of SPI Flash at program mode */
     SpiFlash_Program();
     SpiFlash_Program_Verify();
-
+    printf ("\n\r SPI R/W Test pass ! \n\r");
+    
     while(1);
 }

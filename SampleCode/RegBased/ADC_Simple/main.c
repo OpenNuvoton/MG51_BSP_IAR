@@ -23,7 +23,7 @@ void main (void)
   /* UART0 settting for printf function */
     MODIFY_HIRC(HIRC_24);
     Enable_UART0_VCOM_printf_24M_115200();
-    printf_UART ("\n Test start ...");
+    printf ("\n\r Test start ... \n\r");
 
 
     ENABLE_ADC_AIN4;            
@@ -36,7 +36,7 @@ void main (void)
       ADCResult12bit = ADCRH<<4;
       ADCResult12bit|= ADCRL&0x0F;
       DISABLE_ADC;
-      printf_UART ("\n ADCRH = 0x%x",ADCResult12bit );
+      printf ("\n\r ADCRH = 0x%X",ADCResult12bit );
       Timer0_Delay(24000000,800,1000);
       ENABLE_ADC;
     }

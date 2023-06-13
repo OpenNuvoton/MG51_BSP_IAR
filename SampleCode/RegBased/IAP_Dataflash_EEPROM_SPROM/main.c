@@ -26,7 +26,7 @@ unsigned char i;
 
 void main(void)
 {
-    unsigned int system16highsite;
+    unsigned char system8highsite;
 
 /* UART0 initial setting
   * include sys.c in Library for modify HIRC value to 24MHz
@@ -34,10 +34,10 @@ void main(void)
 */
     MODIFY_HIRC(HIRC_24);
     Enable_UART0_VCOM_printf_24M_115200();
-    printf_UART ("\n Toggle P12 to low to start test...");
+    printf ("\n\r Toggle P05 to low to start test...");
 
-    P12_QUASI_MODE;
-    while (P12);
+    P05_QUASI_MODE;
+    while (P05);
 
     /** IAP program APROM as EEPROM way * include eeprom.c in Library       */
     for (i = 0; i < 50; i++)
@@ -50,16 +50,16 @@ void main(void)
     StructData.c=0xA7;
 
     Write_SPROM_DATAFLASH_ARRAY(0, ArrayData, 50); //write 50 bytes
-    system16highsite = Read_SPROM_BYTE((unsigned char __code *)0x05);
-    printf_UART("\n SPROM 0x05 = 0x%x", system16highsite);
-    system16highsite = Read_SPROM_BYTE((unsigned char __code *)0x12) ;
-    printf_UART("\n SPROM 0x12 = 0x%x", system16highsite);
+    system8highsite = Read_SPROM_BYTE((unsigned char __code *)0x05);
+    printf("\n\r  SPROM 0x05 = 0x%X \r", system8highsite);
+    system8highsite = Read_SPROM_BYTE((unsigned char __code *)0x12) ;
+    printf("\n\r  SPROM 0x12 = 0x%X \r", system8highsite);
 
     Write_SPROM_DATAFLASH_ARRAY(0x11, (unsigned char *)&StructData, sizeof(StructData)); //write structure
-    system16highsite = Read_SPROM_BYTE((unsigned char __code *)0x05);
-    printf_UART("\n SPROM 0x05 Value is updated = 0x%x", system16highsite);
-    system16highsite = Read_SPROM_BYTE((unsigned char __code *)0x12);
-    printf_UART("\n SPROM 0x12 Value is updated = 0x%x", system16highsite);
+    system8highsite = Read_SPROM_BYTE((unsigned char __code *)0x05);
+    printf("\n\r  SPROM 0x05 Value is updated = 0x%X \r", system8highsite);
+    system8highsite = Read_SPROM_BYTE((unsigned char __code *)0x12);
+    printf("\n\r  SPROM 0x12 Value is updated = 0x%X \n\r", system8highsite);
 
     DISABLE_UART0_PRINTF;
 

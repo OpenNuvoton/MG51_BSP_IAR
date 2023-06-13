@@ -218,7 +218,7 @@ __interrupt void I2C_ISR(void){
       AA=1;
     } else {
         /* TO DO */
-        // printf_UART("Status 0x%x is NOT processed\n", u32Status);
+        // printf("Status 0x%X is NOT processed\n", u32Status);
     }
     SI = 0;
 
